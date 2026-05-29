@@ -1,0 +1,35 @@
+name: Bug report
+description: Report incorrect, outdated, or unclear skill guidance.
+title: "[Bug]: "
+labels:
+  - bug
+body:
+  - type: input
+    id: skill
+    attributes:
+      label: Skill
+      description: Which skill is affected?
+      placeholder: aps-automation-api
+    validations:
+      required: true
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem
+      description: What is incorrect, outdated, or unclear?
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected guidance
+      description: What should the skill say or do instead?
+    validations:
+      required: false
+  - type: textarea
+    id: sources
+    attributes:
+      label: Sources
+      description: Link official Autodesk documentation or reproducible evidence when possible.
+    validations:
+      required: false

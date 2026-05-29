@@ -1,0 +1,27 @@
+name: Skill request
+description: Request a new Autodesk API skill.
+title: "[Skill]: "
+labels:
+  - enhancement
+body:
+  - type: input
+    id: api
+    attributes:
+      label: Autodesk API or product
+      placeholder: Revit API, APS Model Derivative, APS Viewer
+    validations:
+      required: true
+  - type: textarea
+    id: workflow
+    attributes:
+      label: Workflow
+      description: Describe the workflow the skill should help with.
+    validations:
+      required: true
+  - type: textarea
+    id: references
+    attributes:
+      label: Useful references
+      description: Add official documentation, samples, or known issues.
+    validations:
+      required: false
