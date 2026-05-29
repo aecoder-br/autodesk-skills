@@ -5,14 +5,14 @@ You have access to the complete Autodesk Platform Services Automation API docume
 
 **Excellent Quick Reference:**
 
-1. **Basic Authentication (typescript):**
-   ```typescript
+1. **Basic Authentication:**
+   ```
    <CLIENT_ID>:<CLIENT_SECRET>
    ```
    *Use this format to encode your Client ID and Secret for basic authentication.*
 
-2. **Create an Activity Alias (json):**
-   ```json
+2. **Create an Activity Alias:**
+   ```curl
    curl -v 'https://developer.api.autodesk.com/da/us-east/v3/activities/:id/aliases' \
      -X 'POST' \
      -H 'Authorization: Bearer <YOUR_ACCESS_TOKEN>' \
@@ -24,8 +24,8 @@ You have access to the complete Autodesk Platform Services Automation API docume
    ```
    *Create a new alias for an activity with a specified version.*
 
-3. **Download a Resulting File (typescript):**
-   ```typescript
+3. **Download a Resulting File:**
+   ```curl
    curl -X GET \
          'https://developer.api.autodesk.com/oss/v2/buckets/<YOUR_BUCKET_KEY>/objects/<RESULT_FILE_OBJECT_KEY>/signeds3download' \
          -H 'Authorization: Bearer <YOUR_ACCESS_TOKEN>' \
@@ -33,8 +33,8 @@ You have access to the complete Autodesk Platform Services Automation API docume
    ```
    *Download a file directly from S3 using a signed URL.*
 
-4. **Modify Alias Details (json):**
-   ```json
+4. **Modify Alias Details:**
+   ```curl
    curl -v 'https://developer.api.autodesk.com/da/us-east/v3/activities/:id/aliases/:aliasId' \
      -X 'PATCH' \
      -H 'Authorization: Bearer <YOUR_ACCESS_TOKEN>' \
@@ -45,7 +45,7 @@ You have access to the complete Autodesk Platform Services Automation API docume
    ```
    *Update the details of an existing activity alias.*
 
-5. **Create a WorkItem (json):**
+5. **Create a WorkItem:**
    ```json
    {
      "activityId": "owner.SampleActivity+test",
@@ -62,23 +62,23 @@ You have access to the complete Autodesk Platform Services Automation API docume
    ```
    *Define a WorkItem with input and output parameters.*
 
-6. **Obtain an Access Token (typescript):**
-   ```typescript
+6. **Obtain an Access Token:**
+   ```curl
    curl -X POST 'https://developer.api.autodesk.com/authentication/v1/authenticate' \
      -H 'Content-Type: application/x-www-form-urlencoded' \
      -d 'client_id=<YOUR_CLIENT_ID>&client_secret=<YOUR_CLIENT_SECRET>&grant_type=client_credentials&scope=data:read'
    ```
    *Request a two-legged OAuth token for authentication.*
 
-7. **List All Activities (json):**
-   ```json
+7. **List All Activities:**
+   ```curl
    curl -v 'https://developer.api.autodesk.com/da/us-east/v3/activities' \
      -H 'Authorization: Bearer <YOUR_ACCESS_TOKEN>'
    ```
    *Retrieve a list of all available activities.*
 
-8. **Delete an Activity (json):**
-   ```json
+8. **Delete an Activity:**
+   ```curl
    curl -v 'https://developer.api.autodesk.com/da/us-east/v3/activities/:id' \
      -X 'DELETE' \
      -H 'Authorization: Bearer <YOUR_ACCESS_TOKEN>'
